@@ -8,25 +8,26 @@
         </router-link>
       </div>
       <div
-        class="container sm:flex hidden items-center justify-end mx-auto gap-10"
+        class="container md:flex hidden items-center justify-end mx-auto gap-10"
       >
         <app-nav-menu-list
           v-for="(nav, index) in linkList"
           :class="checkActiveRoute(nav.url)"
           :key="index"
           :nav="nav"
+          class="mr-2"
         />
       </div>
       <div class="flex md:hidden justify-end items-center container">
-        <button @click="showMobileMenu = !showMobileMenu">
-          <i class="fa fa-bars text-3xl"></i>
+        <button @click="showMobileMenu = !showMobileMenu" class="focus:ring-0 focus:outline-0">
+          <i class="fa fa-bars text-5xl"></i>
         </button>
       </div>
     </div>
     <!--  Mobile Menu -->
-    <XyzTransition appear xyz="fade in-left-100% out-right-100%" mode="out-in">
+    <XyzTransition appear xyz="fade in-left-50% out-right-100%" mode="out-in">
       <div
-        class="absolute right-0 w-1/2 bg-app-blue z-10 flex flex-col md:hidden"
+        class="absolute right-0 md:w-1/3 w-1/2 border-2 border-[#303C4C] bg-app-blue z-10 flex flex-col items-center justify-center md:hidden rounded-lg"
         v-show="showMobileMenu"
       >
         <app-nav-menu-list
@@ -34,6 +35,7 @@
           :class="checkActiveRoute(nav.url)"
           :key="index"
           :nav="nav"
+          class="w-full border-b-2 border-b-[#303C4C]"
         />
       </div>
     </XyzTransition>
@@ -82,7 +84,7 @@ export default {
   methods: {
     checkActiveRoute(routeName) {
       return this.$route.name === routeName
-        ? "btn-primary text-white"
+        ? "md:btn-primary text-white"
         : "text-[#42B983]";
     },
   },

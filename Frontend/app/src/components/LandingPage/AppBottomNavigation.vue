@@ -1,7 +1,7 @@
 <template>
-  <div class="absolute bottom-1 w-screen">
+  <div class="absolute bottom-1 w-screen z-10">
     <div
-      class="container mx-auto flex flex-row-reverse w-1/3 items-center justify-center gap-12"
+      class="container md:mx-auto flex flex-row-reverse w-1/3 items-center md:justify-center justify-start gap-12 ml-auto mr-2"
       v-if="this.$route.name === 'about'"
     >
       <div class="previousPageItem btn btn-primary animate-wiggle">
@@ -13,7 +13,7 @@
     </div>
 
     <div
-      class="container mx-auto flex flex-row-reverse w-1/3 items-center justify-center gap-12"
+      class="container md:mx-auto flex flex-row-reverse w-1/3 items-center md:justify-center justify-start gap-12 ml-auto mr-2"
       v-else
     >
       <div class="nextPageItem btn btn-primary animate-bounce">
@@ -22,7 +22,7 @@
         </button>
       </div>
       <div
-        class="previousPageItem btn btn-primary animate-bounce transition delay-1000"
+        class="previousPageItem btn btn-primary animate-bounce md:mr-0 mr-2"
       >
         <button class="cursor-pointer">
           <i class="fa fa-arrow-alt-circle-left" />
